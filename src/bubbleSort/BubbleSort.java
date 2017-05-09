@@ -18,12 +18,18 @@ package bubbleSort;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class BubbleSort {
+	public static void main(String[] args){
+		int[] aArray = {7,6,5,4,3,2,1};
+		printArray(aArray);
+		printArray(BubbleSort(aArray));
+	}
+
 	public static int[] BubbleSort(int[] aArray){
 		int lastElement = aArray.length;
 		int tmp = 0;
 
 		while (lastElement > 1){
-			for (int i = 0; i < lastElement; i++) {
+			for (int i = 1; i < lastElement; i++) {
 				if (aArray[i-1] > aArray[i]){
 					tmp = aArray[i];
 					aArray[i] = aArray[i-1];
@@ -33,5 +39,11 @@ public class BubbleSort {
 			lastElement -=1;
 		}
 		return aArray;
+	}
+
+	public static void printArray(int[] aArray){
+		for (int element : aArray){
+			System.out.println(element);
+		}
 	}
 }
